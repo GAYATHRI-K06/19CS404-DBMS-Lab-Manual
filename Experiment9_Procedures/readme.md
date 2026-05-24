@@ -207,7 +207,6 @@ Multiplication table of 5:
 5 x 10 = 50
 <img width="917" height="502" alt="image" src="https://github.com/user-attachments/assets/dcacff3f-1e58-48c8-bd9e-0fdfa228cb69" />
 
-## RESULT
-Thus, the PL/SQL programs using procedures and functions were written, compiled, and executed successfully.
+
 ## RESULT
 Thus, the PL/SQL programs using procedures and functions were written, compiled, and executed successfully.
