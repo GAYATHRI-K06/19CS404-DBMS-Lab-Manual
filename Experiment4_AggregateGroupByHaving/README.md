@@ -1,4 +1,4 @@
-# Experiment 4: Aggregate Functions, Group By and Having Clause
+## Experiment 4: Aggregate Functions, Group By and Having Clause
 
 ## AIM
 To study and implement aggregate functions, GROUP BY, and HAVING clause with suitable examples.
@@ -38,123 +38,121 @@ HAVING condition;
 
 **Question 1**
 --
--- Paste Question 1 here
+Sample table:Appointments Table
+<img width="427" height="273" alt="image" src="https://github.com/user-attachments/assets/c592868c-a925-4603-945f-74ec6cf35eb4" />
 
-```sql
--- Paste your SQL code below for Question 1
-```
+Answer: SELECT strftime('%H',AppointmentDateTime) AS HourOfDay, COUNT(*) AS TotalAppointments FROM Appointments GROUP BY strftime('%H',AppointmentDateTime) ORDER BY HourOfDay;
 
 **Output:**
+<img width="850" height="686" alt="image" src="https://github.com/user-attachments/assets/ceb9ded8-9cf2-4fb9-a6b2-5fdebb16b5f5" />
 
-![Output1](output.png)
 
 **Question 2**
 ---
--- Paste Question 2 here
+How many patients are there in each age group category (e.g., under 20, 20-30, 30-40, etc.)? Sample table: Patients Table
 
-```sql
--- Paste your SQL code below for Question 2
-```
+Answer:
+<img width="867" height="649" alt="image" src="https://github.com/user-attachments/assets/f16d31e7-1630-49b4-8eb0-2a69f3f86493" />
+
+
 
 **Output:**
 
-![Output2](output.png)
+<img width="587" height="402" alt="image" src="https://github.com/user-attachments/assets/895c0309-aac4-45a0-ace2-bc12de287947" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+-How many prescriptions were written in each frequency category (e.g., once daily, twice daily)? Sample tablePrescriptions Table
 
-```sql
--- Paste your SQL code below for Question 3
-```
+Answer: SELECT Frequency, COUNT(*) AS TotalPrescriptions FROM Prescriptions GROUP BY Frequency ORDER BY Frequency;
+
 
 **Output:**
+<img width="814" height="617" alt="image" src="https://github.com/user-attachments/assets/cec39762-9e8e-4cf1-ac6d-bb2e7dc651ba" />
 
-![Output3](output.png)
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to Calculate the average income of the employees with names starting with 'A': Table: employee
 
-```sql
--- Paste your SQL code below for Question 4
-```
+<img width="278" height="235" alt="image" src="https://github.com/user-attachments/assets/bd81a468-6a6d-4201-8199-f2e019ddb9c9" />
 
+Answer: SELECT AVG(income) AS avg_income FROM employee WHERE name LIKE 'A%'; 
 **Output:**
-
-![Output4](output.png)
+<img width="468" height="305" alt="image" src="https://github.com/user-attachments/assets/a08f5b12-bdd0-46a9-b553-d272208b2b35" />
 
 **Question 5**
----
--- Paste Question 5 here
+Write a SQL query to calculate the total number of working hours of all employees Sample table: employee1
 
-```sql
--- Paste your SQL code below for Question 5
-```
+Answer:
+
+SELECT SUM(workhour) AS "Total working hours" FROM employee1;
+
+
 
 **Output:**
 
-![Output5](output.png)
+<img width="671" height="375" alt="image" src="https://github.com/user-attachments/assets/9bdb63e5-2ed2-4e16-96a2-928fa0d706f1" />
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to calculate total purchase amount of all orders. Return total purchase amount.
+<img width="664" height="164" alt="image" src="https://github.com/user-attachments/assets/ea0a1e90-8713-4961-8ac4-86d5beb0eeca" />
 
-```sql
--- Paste your SQL code below for Question 6
-```
+Answer: SELECT SUM(purch_amt) AS TOTAL FROM orders;
 
 **Output:**
-
-![Output6](output.png)
+<img width="632" height="427" alt="image" src="https://github.com/user-attachments/assets/d135bcb2-fff0-4b56-8ac8-79609defcb75" />
 
 **Question 7**
----
--- Paste Question 7 here
+Write a SQL query to count the number of customers. Return number of customers. Sample table: customer
 
-```sql
--- Paste your SQL code below for Question 7
-```
+<img width="727" height="162" alt="image" src="https://github.com/user-attachments/assets/7929c22d-2243-4f9d-9e55-62124957d86d" />
+
+Answer:
+
+SELECT COUNT(cust_name) AS COUNT FROM customer;
 
 **Output:**
+<img width="531" height="371" alt="image" src="https://github.com/user-attachments/assets/5279c865-ac80-4cf5-86a3-c2094eab37cf" />
 
-![Output7](output.png)
 
 **Question 8**
----
--- Paste Question 8 here
+Write the SQL query that accomplishes the grouping of data by joining date (jdate), calculates the minimum work hours for each date, and excludes dates where the minimum work hour is not less than 10.
 
-```sql
--- Paste your SQL code below for Question 8
-```
+Answer:
+
+SELECT jdate,MIN(workhour) AS "MIN(workhour)" FROM employee1 GROUP BY jdate HAVING MIN(workhour)<10;
+
 
 **Output:**
 
-![Output8](output.png)
+<img width="753" height="512" alt="image" src="https://github.com/user-attachments/assets/6ff5a142-2f70-4018-a02e-3f2172f036ca" />
+
 
 **Question 9**
----
--- Paste Question 9 here
+Write the SQL query that achieves the grouping of data by age intervals using the expression (age/5)5, calculates the average age for each group, and excludes groups where the average age is not less than 24.
 
-```sql
--- Paste your SQL code below for Question 9
-```
+Answer:
+
+SELECT (age -(age%5)) AS age_group, AVG(age) AS "AVG(age)" FROM customer1 GROUP BY age_group HAVING AVG(age)<=24;
 
 **Output:**
 
-![Output9](output.png)
+<img width="718" height="364" alt="image" src="https://github.com/user-attachments/assets/4119e8b0-24b9-462a-8795-f602015895ef" />
+
 
 **Question 10**
----
--- Paste Question 10 here
+Write the SQL query that achieves the grouping of data by occupation, calculates the minimum work hours for each occupation, and excludes occupations where the minimum work hour is not greater than 8.
 
-```sql
--- Paste your SQL code below for Question 10
-```
+Answer:
 
+SELECT occupation, MIN(workhour) AS "MIN(workhour)" FROM employee1 group by occupation having min(workhour)>8; 
 **Output:**
 
-![Output10](output.png)
+<img width="853" height="649" alt="image" src="https://github.com/user-attachments/assets/6ea04f83-18e0-461e-8e65-68cec87f2cc6" />
 
 
 ## RESULT
