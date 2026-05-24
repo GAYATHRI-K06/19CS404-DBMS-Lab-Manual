@@ -315,7 +315,7 @@ This supports real-world billing systems.
 
 ---
 
-# **## RESULT**
+# **RESULT**
 
 Successfully designed an **ER diagram for the Hospital Database** with:
 
