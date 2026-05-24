@@ -375,8 +375,6 @@ FROM Old_customers;
 **Output:**
 
 <img width="858" height="172" alt="image" src="https://github.com/user-attachments/assets/4e222997-2523-4f41-afa1-7dbf816adec3" />
-## RESULT:
-Thus, the SQL queries to implement different types of constraints and DDL commands have been executed successfully.
 
 
 ## RESULT
